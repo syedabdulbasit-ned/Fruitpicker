@@ -7,10 +7,10 @@ MAX_FRUIT = 1500
 def person_picker(crate, crate_ind, tree_ind, tree, crate_full, crate_mutex, pickers_completed, done_mutex, turns):
     picker_id = int(current_process().name.split('-')[1]) - 1
 
-    while True:
+    while True:  
         fruit = None
         with done_mutex:
-            if tree_ind.value >= len(tree):
+            if tree_ind.value >= len(tree) :
                 break
         turns[picker_id].acquire()
 
